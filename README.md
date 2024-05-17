@@ -20,6 +20,10 @@
 - ラズベリーパイのUART はttyS0 / ttyAMA0 など実機に合わせてください
 
 # Samples
+## E220_Sample.py
+- LoRa E220 の受信サンプル
+- 起動時にDipp-SW の設定によりE220 を初期化
+- 受信データをコンソールに表示します
 ## RANDX-DEMO1.py
 - RANDX-C-LoRa から受信するサンプルです
 - 起動時にDipp-SW の設定によりE220 を初期化

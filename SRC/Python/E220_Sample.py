@@ -135,21 +135,10 @@ def main():
             # UART Check
             while uart.in_waiting:
                 time.sleep(0.05)
-                if uart.in_waiting > 23:
-                    receive_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]     # datetime get
-                    uart_data = uart.read(24)                                               # UART
-                    hex_data = ''.join('{:02x}'.format(byte) for byte in uart_data)
-                    print(f"UART:{receive_time} : {hex_data}")
-
-                    id = ''.join('{:02X}'.format(byte) for byte in uart_data[:6])           # 0-5
-                    vBat = int(uart_data[6]) * 3.6 / 256                                    # 6
-                    # 2Byte単位の電流を取り出す
-                    cur_data = [int.from_bytes(uart_data[i:i+2], byteorder='big') / 100.0 for i in range(7, 23, 2)]
-                    print(f"ID: {id}  BAT: {vBat:.2f}V |  Cur: {cur_data}")
-
-                    # UPLOAD
-                else:
-                    uart.reset_input_buffer()
+                receive_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]     # datetime get
+                uart_data = uart.read(24)                                               # UART
+                hex_data = ''.join('{:02x}'.format(byte) for byte in uart_data)
+                print(f"UART:{receive_time} : {hex_data}")
             time.sleep(0.1)
 
     except KeyboardInterrupt:
