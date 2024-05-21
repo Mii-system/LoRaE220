@@ -16,8 +16,12 @@
 
 ## 注意事項
 - ボードの取り付け，取り外しは電源オフ状態で行ってください。
+- - ラズパイの場合アンテナがLAN/USB と同じ向きになります
+- - reTerminal の場合，アンテナが上向きになります
 - E220は9600bps 8N1 がデフォルトとなります
 - ラズベリーパイのUART はttyS0 / ttyAMA0 など実機に合わせてください
+
+!<img src="https://github.com/Mii-system/LoRaE220/assets/69335570/a51b8dbf-641a-4a19-b0ad-3cff682e09f0" width="320p">
 
 ## 故障かなと思ったら
 ### 受信できない
@@ -45,9 +49,10 @@
 <br><br>
 
 # Dipp-SW Exsample
-![image](https://github.com/Mii-system/LoRaE220/assets/69335570/3efbd05f-0b5c-4cc4-96c8-cd955a760529)
+!<img src="https://github.com/Mii-system/LoRaE220/assets/69335570/3efbd05f-0b5c-4cc4-96c8-cd955a760529" width="320p">
+
 - Sample プログラムのDipp-SW 設定例です
 - POW : LoRa 通信速度です，High/Middle/Low/Extra Low Speed.の略で速いほど応答が良いが距離は短くなります
 - ADR : LoRa アドレスです，アプリ固有の使い方を推奨，サンプルは0x02xx (00/01/7F) を使用
-- TIME: 子機の送信周期です，(1/5/10/60 min) としています，バッテリー寿命に影響します
+- TIME: 子機の送信周期です，(1/5/10/60 [min]) としています，バッテリー寿命に影響します
 - CH  : LoRa 通信チャンネルです，0-7を使用し他機器と重ならない事を推奨
