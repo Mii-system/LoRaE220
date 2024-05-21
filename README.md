@@ -23,7 +23,7 @@
 ### 受信できない
 - 送信側と受信側のLoRa 設定を同じにする必要があります
 - Sample ソフトのアドレスは0x027F としています
-- chおよびLoRa通信ソフトDippSWによります
+- ch / Adr / LoRa PowはDippSWにより設定していますので親機子機の設定を同じにしてください
 - 設定が一致していれば受信時にLEDが点滅します
 ### Python のエラーが出る
 - エラーメッセージを確認してください
@@ -42,5 +42,12 @@
 ## RANDX-DEMO2.py
 - RANDX-DEMO1.py から受信した電流情報をInfluxDB に保存します
 - InfluxDB の設定などはプログラムを参考に取り進めください
-
 <br><br>
+
+# Dipp-SW Exsample
+![image](https://github.com/Mii-system/LoRaE220/assets/69335570/3efbd05f-0b5c-4cc4-96c8-cd955a760529)
+- Sample プログラムのDipp-SW 設定例です
+- POW : LoRa 通信速度です，High/Middle/Low/Extra Low Speed.の略で速いほど応答が良いが距離は短くなります
+- ADR : LoRa アドレスです，アプリ固有の使い方を推奨，サンプルは0x02xx (00/01/7F) を使用
+- TIME: 子機の送信周期です，(1/5/10/60 min) としています，バッテリー寿命に影響します
+- CH  : LoRa 通信チャンネルです，0-7を使用し他機器と重ならない事を推奨
